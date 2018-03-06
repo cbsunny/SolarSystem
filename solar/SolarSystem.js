@@ -281,7 +281,7 @@ module.exports = {
     /*初始化指向显示星星名字*/
     displayPlanetName(){
         stars.forEach(star=>
-            nameConstructor(star.name,stars.volume);
+            nameConstructor(star.name,stars.volume)
         )
         nameConstructor('Sun', 12);
 
@@ -306,7 +306,7 @@ module.exports = {
 
         /*行星公转*/   
         stars.forEach(star=>
-             this.moveEachStar(star);
+             this.moveEachStar(star)
         )
 
         /*太阳自转*/
@@ -360,7 +360,7 @@ module.exports = {
     moveEachStar(star){
 
         star.angle+=star.speed;
-        (star.angle > Math.PI * star.distance) && star.angle -= Math.PI * star.distance;
+        (star.angle > Math.PI * star.distance) && (star.angle -= Math.PI * star.distance);
 
         star.Mesh.position.set(star.distance * Math.sin(star.angle), 0, star.distance * Math.cos(star.angle));
 
